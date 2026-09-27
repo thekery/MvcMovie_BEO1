@@ -6,11 +6,13 @@ namespace MvcMovie.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Home
         public IActionResult Index()
         {
             return View();
         }
 
+        // GET: Home/Privacy
         public IActionResult Privacy()
         {
             return View();
