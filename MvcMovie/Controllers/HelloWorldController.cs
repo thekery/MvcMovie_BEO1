@@ -9,25 +9,20 @@ namespace MvcMovie.Controllers
 
         //
         // GET: /HellowWorld
-        public string Index()
+        public IActionResult Index()
         {
-            return "This is my default action!";
+            return View();
         }
 
         //
         // GET: /HellowWorld/Welcome
         // Parameter takes data from URL. - model binding
-        // Otherwise uses default values. (no value, 1)
 
-        /*
-         public string Welcome(string name, int numTimes = 1)
-         {
-             return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
-         }
-        */
-        public string Welcome(string name, int ID = 1)
+        public IActionResult Welcome(string name, int numTimes = 1)
         {
-            return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
+            ViewData["Message"] = "Hello " + name;
+            ViewData["numTimes"] = numTimes;
+            return View();
         }
 
     }
